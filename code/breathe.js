@@ -5,12 +5,20 @@ var grb = new Uint8ClampedArray(led_count * 3);
 var min = 0;
 var max = 1;
 var direction = 'up';
+const COLORS = [
+  [1,0,0], // green
+  [0,1,0], // red'
+  [0,0,1], // blue
+  [1,1,0], // yellow
+  [0,1,1], // pink
+  [1,1,1], // white
+];
 
 function getColor() {
-  return Math.floor(Math.random() * (max - min + 1) + min);
+  return COLORS[Math.floor(Math.random() * (COLORS.length - 0 + 1) + 0)];
 }
 
-var standardColor = [getColor(), getColor(), getColor()];
+var standardColor = getColor();
 var intensity = 0;
 
 function setDirection() {
